@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акции и Бонусы | Варик - Гончарик</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .calculator-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 30px;
+            margin-top: 40px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .calc-input-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .calc-result-wrap {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .calc-slider {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            outline: none;
+            accent-color: var(--neon-pink);
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .calc-val-display {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            float: right;
+        }
+        .calc-level-badge {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 15px 0;
+            background: linear-gradient(135deg, var(--neon-yellow), #eab308);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+        .calc-points-total {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+        .calc-points-total span {
+            color: var(--neon-pink);
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        @media(max-width:768px){
+            .calc-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="brand-block">
+                <div class="logo" onclick="window.location.href='index.html'">🍿 Варик-Гончарик</div>
+                <div class="city-selector">
+                    <select id="citySelect">
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="msk">Москва</option>
+                        <option value="perm">Пермь</option>
+                        <option value="kazan">Казань</option>
+                        <option value="krd">Краснодар</option>
+                        <option value="sochi">Сочи</option>
+                        <option value="nn">Нижний Новгород</option>
+                        <option value="vlad">Владивосток</option>
+                    </select>
+                </div>
+            </div>
+            <nav class="main-navigation">
+                <div class="nav-group base-infrastructure">
+                    <a href="index.html" class="nav-link">Главная / Афиша</a>
+                    <a href="cinemas.html" class="nav-link">Кинотеатры</a>
+                    <a href="bonuses.html" class="nav-link">Акции и Бонусы</a>
+                </div>
+                <div class="nav-group unique-features">
+                    <a href="roulette.html" class="nav-link highlight-link">Кино-Рулетка 🎲</a>
+                    <a href="merch.html" class="nav-link">Магазин</a>
+                    <a href="kinobar.html" class="nav-link">Кинобар 🍿</a>
+                </div>
+            </nav>
+            <div class="user-profile-block">
+                <a href="account.html" class="profile-btn">Личный кабинет</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-wrapper" style="margin-top: 80px;">
+        <!-- Promotions Section -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Акции сети кинотеатров</h2>
+                <p>Получайте незабываемые эмоции и экономьте вместе с нами</p>
+            </div>
+            
+            <div class="movies-grid">
+                <!-- Promo 1 -->
+                <div class="movie-card">
+                    <div class="movie-poster-wrap" style="height: 220px; background: linear-gradient(135deg, #a21caf, #6366f1); display: flex; align-items: center; justify-content: center; font-size: 5rem;">
+                        🎓
+                    </div>
+                    <div class="movie-info" style="padding: 20px;">
+                        <span class="genre-tag" style="background: rgba(217, 70, 239, 0.15); color: var(--neon-pink); align-self: flex-start;">Скидка 25%</span>
+                        <h3 class="movie-title" style="margin-top: 10px;">Студенческая среда</h3>
+                        <p class="movie-desc" style="margin-bottom: 0;">Показывайте студенческий билет в кассах по средам и получайте скидку 25% на любые стандартные 2D/3D сеансы.</p>
+                    </div>
+                </div>
+
+                <!-- Promo 2 -->
+                <div class="movie-card">
+                    <div class="movie-poster-wrap" style="height: 220px; background: linear-gradient(135deg, #09090b, #3f3f46); display: flex; align-items: center; justify-content: center; font-size: 5rem;">
+                        🎂
+                    </div>
+                    <div class="movie-info" style="padding: 20px;">
+                        <span class="genre-tag" style="background: rgba(6, 182, 212, 0.15); color: var(--neon-cyan); align-self: flex-start;">Скидка 50%</span>
+                        <h3 class="movie-title" style="margin-top: 10px;">День Рождения в кино</h3>
+                        <p class="movie-desc" style="margin-bottom: 0;">Дарим именинникам скидку 50% на второй билет, а также бесплатный карамельный попкорн размера S при любой покупке.</p>
+                    </div>
+                </div>
+
+                <!-- Promo 3 -->
+                <div class="movie-card">
+                    <div class="movie-poster-wrap" style="height: 220px; background: linear-gradient(135deg, #b45309, #eab308); display: flex; align-items: center; justify-content: center; font-size: 5rem;">
+                        🍿
+                    </div>
+                    <div class="movie-info" style="padding: 20px;">
+                        <span class="genre-tag" style="background: rgba(250, 204, 21, 0.15); color: var(--neon-yellow); align-self: flex-start;">Экономия 15%</span>
+                        <h3 class="movie-title" style="margin-top: 10px;">Кинобар-Экспресс комбо</h3>
+                        <p class="movie-desc" style="margin-bottom: 0;">Заказывайте попкорн и напитки комбо-наборами в нашем приложении. Это выгоднее на 15% и не требует стояния в очереди!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loyalty Calculator Section -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Бонусный калькулятор лояльности</h2>
+                <p>Узнайте, сколько баллов вы получите и какой статус программы лояльности вам доступен</p>
+            </div>
+            
+            <div class="calculator-card">
+                <div class="calc-grid">
+                    <div class="calc-input-wrap">
+                        <div class="form-group">
+                            <label>Покупка билетов в месяц (₽)
+                                <span class="calc-val-display" id="ticketsVal">2 000 ₽</span>
+                            </label>
+                            <input class="calc-slider" id="ticketsSlider" type="range" min="0" max="10000" step="500" value="2000">
+                        </div>
+                        <div class="form-group">
+                            <label>Покупки в баре в месяц (₽)
+                                <span class="calc-val-display" id="barVal">1 500 ₽</span>
+                            </label>
+                            <input class="calc-slider" id="barSlider" type="range" min="0" max="10000" step="500" value="1500">
+                        </div>
+                    </div>
+                    <div class="calc-result-wrap">
+                        <h4>Ваш прогнозируемый статус:</h4>
+                        <div class="calc-level-badge" id="levelName">Бронза</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">(кешбэк баллами 5%)</p>
+                        
+                        <div class="calc-points-total" style="margin-top: 20px;">
+                            Накопите за год:<br>
+                            <span id="annualPoints">2 100</span> баллов
+                        </div>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px; max-width: 320px;">
+                            Баллами можно оплатить до 100% стоимости билетов и товаров в кинобаре по курсу 1 балл = 1 рубль.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Сеть кинотеатров «Варик - Гончарик». Все права защищены.</p>
+    </footer>
+
+    <!-- Chat Bot Integration -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger 
+        intent="WELCOME" 
+        chat-title="ЧатБот" 
+        agent-id="ec699caf-f14a-4a44-8a08-49cab484a764" 
+        language-code="ru" 
+        chat-icon="https://sun9-62.userapi.com/s/v1/ig2/gZJ1_e2h3SiXRsHkasMsDhKUEQqkqydRQeQliSJZga9aO6iUB4YUC7_qcm8vCVs0y1Tn9IdLjDtsP6cTNrMMpt9X.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1536x1024&from=bu&u=0rAYHVJgczhhNqYdIK0Dm8xxPLF6Fa6U0E5RPcapN0k&cs=1536x0">
+    </df-messenger>
+    <img src="https://sun9-62.userapi.com/s/v1/ig2/gZJ1_e2h3SiXRsHkasMsDhKUEQqkqydRQeQliSJZga9aO6iUB4YUC7_qcm8vCVs0y1Tn9IdLjDtsP6cTNrMMpt9X.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1536x1024&from=bu&u=0rAYHVJgczhhNqYdIK0Dm8xxPLF6Fa6U0E5RPcapN0k&cs=1536x0" 
+         class="custom-bot-mascot" 
+         onclick="const df = document.querySelector('df-messenger'); if (df.hasAttribute('expand')) { df.removeAttribute('expand'); } else { df.setAttribute('expand', 'true'); }" 
+         alt="Чат">
+    
+    <div class="chat-window-wrapper" id="chatWrapper">
+        <button class="chat-close-btn" onclick="document.querySelector('df-messenger').removeAttribute('expand');" title="Закрыть чат">&times;</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkExist = setInterval(function() {
+                const df = document.querySelector('df-messenger');
+                if (df && df.shadowRoot && df.shadowRoot.querySelector('#widgetIcon')) {
+                    const style = document.createElement('style');
+                    style.innerHTML = '#widgetIcon { display: none !important; }';
+                    df.shadowRoot.appendChild(style);
+                    clearInterval(checkExist);
+                }
+            }, 100);
+        });
+    </script>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tkSlider = document.getElementById('ticketsSlider');
+            const barSlider = document.getElementById('barSlider');
+            
+            const tkDisplay = document.getElementById('ticketsVal');
+            const barDisplay = document.getElementById('barVal');
+            
+            const levelEl = document.getElementById('levelName');
+            const pointsEl = document.getElementById('annualPoints');
+            
+            function recalculatePoints() {
+                const tkVal = parseInt(tkSlider.value);
+                const barVal = parseInt(barSlider.value);
+                
+                tkDisplay.textContent = tkVal.toLocaleString() + ' ₽';
+                barDisplay.textContent = barVal.toLocaleString() + ' ₽';
+                
+                const totalMonth = tkVal + barVal;
+                const totalYear = totalMonth * 12;
+                
+                let percent = 0.05;
+                let status = "Бронза";
+                let statusColor = "linear-gradient(135deg, #cd7f32, #a0522d)"; // bronze
+                
+                if (totalMonth >= 5000) {
+                    percent = 0.15;
+                    status = "Золото";
+                    statusColor = "linear-gradient(135deg, var(--neon-yellow), #eab308)";
+                } else if (totalMonth >= 2500) {
+                    percent = 0.10;
+                    status = "Серебро";
+                    statusColor = "linear-gradient(135deg, #e2e8f0, #94a3b8)";
+                }
+                
+                const points = Math.floor(totalYear * percent);
+                
+                levelEl.textContent = status;
+                levelEl.style.background = statusColor;
+                levelEl.style.webkitBackgroundClip = 'text';
+                levelEl.style.webkitTextFillColor = 'transparent';
+                
+                pointsEl.textContent = points.toLocaleString();
+            }
+            
+            tkSlider.addEventListener('input', recalculatePoints);
+            barSlider.addEventListener('input', recalculatePoints);
+            
+            recalculatePoints();
+        });
+    </script>
+</body>
+</html>
