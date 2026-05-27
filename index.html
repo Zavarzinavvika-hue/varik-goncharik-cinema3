@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Варик - Гончарик | Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="brand-block">
+                <div class="logo" onclick="window.location.href='index.html'">🍿 Варик-Гончарик</div>
+                <div class="city-selector">
+                    <select id="citySelect">
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="msk">Москва</option>
+                        <option value="perm">Пермь</option>
+                        <option value="kazan">Казань</option>
+                        <option value="krd">Краснодар</option>
+                        <option value="sochi">Сочи</option>
+                        <option value="nn">Нижний Новгород</option>
+                        <option value="vlad">Владивосток</option>
+                    </select>
+                </div>
+            </div>
+            <nav class="main-navigation">
+                <div class="nav-group base-infrastructure">
+                    <a href="index.html" class="nav-link">Главная / Афиша</a>
+                    <a href="cinemas.html" class="nav-link">Кинотеатры</a>
+                    <a href="bonuses.html" class="nav-link">Акции и Бонусы</a>
+                </div>
+                <div class="nav-group unique-features">
+                    <a href="roulette.html" class="nav-link highlight-link">Кино-Рулетка 🎲</a>
+                    <a href="merch.html" class="nav-link">Магазин</a>
+                    <a href="kinobar.html" class="nav-link">Кинобар 🍿</a>
+                </div>
+            </nav>
+            <div class="user-profile-block">
+                <a href="account.html" class="profile-btn">Личный кабинет</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="site-cover">
+        <div class="cover-overlay">
+            <div class="cover-text-container">
+                <p class="hero-subtitle">Больше чем просто киносеть. Погрузись в атмосферу кино нового поколения.</p>
+                <div class="cover-buttons">
+                    <a href="#schedule" class="action-btn primary">Выбрать сеанс</a>
+                    <a href="roulette.html" class="action-btn secondary">Испытать удачу</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="content-wrapper">
+        <section id="schedule" class="content-section">
+            <div class="section-header">
+                <h2 id="scheduleTitle">🗓 Расписание сеансов на сегодня</h2>
+                <p id="scheduleSubtitle" class="schedule-subtitle">Цены зависят от времени суток: утром — дешевле, вечером — дороже. Выбирайте удобный сеанс:</p>
+            </div>
+            <div class="placeholder-box">
+                <p>Контент расписания фильмов...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Сеть кинотеатров «Варик - Гончарик». Все права защищены.</p>
+    </footer>
+
+    <!-- Chat Bot Integration -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger 
+        intent="WELCOME" 
+        chat-title="ЧатБот" 
+        agent-id="ec699caf-f14a-4a44-8a08-49cab484a764" 
+        language-code="ru" 
+        chat-icon="https://sun9-62.userapi.com/s/v1/ig2/gZJ1_e2h3SiXRsHkasMsDhKUEQqkqydRQeQliSJZga9aO6iUB4YUC7_qcm8vCVs0y1Tn9IdLjDtsP6cTNrMMpt9X.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1536x1024&from=bu&u=0rAYHVJgczhhNqYdIK0Dm8xxPLF6Fa6U0E5RPcapN0k&cs=1536x0">
+    </df-messenger>
+    <img src="https://sun9-62.userapi.com/s/v1/ig2/gZJ1_e2h3SiXRsHkasMsDhKUEQqkqydRQeQliSJZga9aO6iUB4YUC7_qcm8vCVs0y1Tn9IdLjDtsP6cTNrMMpt9X.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1536x1024&from=bu&u=0rAYHVJgczhhNqYdIK0Dm8xxPLF6Fa6U0E5RPcapN0k&cs=1536x0" 
+         class="custom-bot-mascot" 
+         onclick="const df = document.querySelector('df-messenger'); if (df.hasAttribute('expand')) { df.removeAttribute('expand'); } else { df.setAttribute('expand', 'true'); }" 
+         alt="Чат">
+    
+    <div class="chat-window-wrapper" id="chatWrapper">
+        <button class="chat-close-btn" onclick="document.querySelector('df-messenger').removeAttribute('expand');" title="Закрыть чат">&times;</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkExist = setInterval(function() {
+                const df = document.querySelector('df-messenger');
+                if (df && df.shadowRoot && df.shadowRoot.querySelector('#widgetIcon')) {
+                    const style = document.createElement('style');
+                    style.innerHTML = '#widgetIcon { display: none !important; }';
+                    df.shadowRoot.appendChild(style);
+                    clearInterval(checkExist);
+                }
+            }, 100);
+        });
+    </script>
+
+    <!-- Main scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
