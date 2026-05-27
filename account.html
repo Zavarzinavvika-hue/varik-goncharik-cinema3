@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный Кабинет | Варик - Гончарик</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="brand-block">
+                <div class="logo" onclick="window.location.href='index.html'">🍿 Варик-Гончарик</div>
+                <div class="city-selector">
+                    <select id="citySelect">
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="msk">Москва</option>
+                        <option value="perm">Пермь</option>
+                        <option value="kazan">Казань</option>
+                        <option value="krd">Краснодар</option>
+                        <option value="sochi">Сочи</option>
+                        <option value="nn">Нижний Новгород</option>
+                        <option value="vlad">Владивосток</option>
+                    </select>
+                </div>
+            </div>
+            <nav class="main-navigation">
+                <div class="nav-group base-infrastructure">
+                    <a href="index.html" class="nav-link">Главная / Афиша</a>
+                    <a href="cinemas.html" class="nav-link">Кинотеатры</a>
+                    <a href="bonuses.html" class="nav-link">Акции и Бонусы</a>
+                </div>
+                <div class="nav-group unique-features">
+                    <a href="roulette.html" class="nav-link highlight-link">Кино-Рулетка 🎲</a>
+                    <a href="merch.html" class="nav-link">Магазин</a>
+                    <a href="kinobar.html" class="nav-link">Кинобар 🍿</a>
+                </div>
+            </nav>
+            <div class="user-profile-block">
+                <a href="account.html" class="profile-btn">Личный кабинет</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-wrapper" style="margin-top: 80px;">
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Личный кабинет</h2>
+                <p>Ваши билеты, программа лояльности и управление заказами</p>
+            </div>
+            
+            <div class="account-layout">
+                <!-- Left Column: Loyalty Card and Profile Form -->
+                <div class="account-sidebar-block">
+                    <!-- 3D Card Loyalty -->
+                    <div class="loyalty-card-wrapper" title="Наведите для оборота карты">
+                        <div class="loyalty-card-inner">
+                            <!-- Card Front -->
+                            <div class="loyalty-card-front">
+                                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                    <div class="loyalty-chip"></div>
+                                    <span class="loyalty-brand">ВАРИК-ГОНЧАРИК</span>
+                                </div>
+                                <div class="loyalty-number">5402 9840 1209 4381</div>
+                                <div class="loyalty-footer">
+                                    <div class="loyalty-holder">
+                                        <span>Владелец карты</span>
+                                        <strong id="cardHolderLabel">АЛЕКСАНДР ЛАПИН</strong>
+                                    </div>
+                                    <div class="loyalty-balance">
+                                        <span>Баланс баллов</span>
+                                        <strong id="cardPointsLabel">420 б.</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Card Back -->
+                            <div class="loyalty-card-back">
+                                <div style="background: white; padding: 10px; border-radius: 8px; margin-bottom: 8px;">
+                                    <svg viewBox="0 0 100 25" width="200" height="50" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0" y="0" width="100" height="25" fill="#fff"/>
+                                        <rect x="5" y="2" width="2" height="21" fill="#000"/>
+                                        <rect x="9" y="2" width="1" height="21" fill="#000"/>
+                                        <rect x="12" y="2" width="3" height="21" fill="#000"/>
+                                        <rect x="17" y="2" width="1" height="21" fill="#000"/>
+                                        <rect x="19" y="2" width="2" height="21" fill="#000"/>
+                                        <rect x="23" y="2" width="4" height="21" fill="#000"/>
+                                        <rect x="29" y="2" width="1" height="21" fill="#000"/>
+                                        <rect x="32" y="2" width="2" height="21" fill="#000"/>
+                                        <rect x="36" y="2" width="3" height="21" fill="#000"/>
+                                        <rect x="41" y="2" width="1" height="21" fill="#000"/>
+                                        <rect x="44" y="2" width="2" height="21" fill="#000"/>
+                                        <rect x="48" y="2" width="4" height="21" fill="#000"/>
+                                        <rect x="54" y="2" width="1" height="21" fill="#000"/>
+                                        <rect x="57" y="2" width="2" height="21" fill="#000"/>
+                                        <rect x="61" y="2" width="3" height="21" fill="#000"/>
+                                        <rect x="66" y="2" width="1" height="21" fill="#000"/>
+                                        <rect x="69" y="2" width="2" height="21" fill="#000"/>
+                                        <rect x="73" y="2" width="4" height="21" fill="#000"/>
+                                        <rect x="79" y="2" width="2" height="21" fill="#000"/>
+                                        <rect x="83" y="2" width="1" height="21" fill="#000"/>
+                                        <rect x="86" y="2" width="3" height="21" fill="#000"/>
+                                        <rect x="91" y="2" width="1" height="21" fill="#000"/>
+                                        <rect x="93" y="2" width="2" height="21" fill="#000"/>
+                                    </svg>
+                                </div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Сканируйте на кассе</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Card -->
+                    <div class="profile-card">
+                        <h3>Профиль пользователя</h3>
+                        <div class="profile-form-grid" style="grid-template-columns: 1fr;">
+                            <div class="form-group">
+                                <label for="profileName">Имя и Фамилия</label>
+                                <input class="form-input" id="profileName" type="text" value="Александр Лапин">
+                            </div>
+                            <div class="form-group">
+                                <label for="profileEmail">Эл. почта</label>
+                                <input class="form-input" id="profileEmail" type="email" value="alex.lapin@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="profilePhone">Мобильный</label>
+                                <input class="form-input" id="profilePhone" type="tel" value="+7 (999) 123-45-67">
+                            </div>
+                        </div>
+                        <button class="save-profile-btn" id="saveProfileBtn">Сохранить</button>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Tickets & Shop Order Histories -->
+                <div class="account-details-block" style="display: flex; flex-direction: column; gap: 40px;">
+                    <!-- Active Tickets -->
+                    <div class="profile-card" style="background: rgba(255,255,255,0.015);">
+                        <h3 style="margin-bottom: 20px;">Мои билеты в кино</h3>
+                        <div class="tickets-history-section" id="activeTicketsList">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                    
+                    <!-- Kinobar orders -->
+                    <div class="profile-card" style="background: rgba(255,255,255,0.015);">
+                        <h3 style="margin-bottom: 20px;">Заказы в кинобаре</h3>
+                        <div class="tickets-history-section" id="barOrdersList">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Сеть кинотеатров «Варик - Гончарик». Все права защищены.</p>
+    </footer>
+
+    <!-- Chat Bot Integration -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger 
+        intent="WELCOME" 
+        chat-title="ЧатБот" 
+        agent-id="ec699caf-f14a-4a44-8a08-49cab484a764" 
+        language-code="ru" 
+        chat-icon="https://sun9-62.userapi.com/s/v1/ig2/gZJ1_e2h3SiXRsHkasMsDhKUEQqkqydRQeQliSJZga9aO6iUB4YUC7_qcm8vCVs0y1Tn9IdLjDtsP6cTNrMMpt9X.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1536x1024&from=bu&u=0rAYHVJgczhhNqYdIK0Dm8xxPLF6Fa6U0E5RPcapN0k&cs=1536x0">
+    </df-messenger>
+    <img src="https://sun9-62.userapi.com/s/v1/ig2/gZJ1_e2h3SiXRsHkasMsDhKUEQqkqydRQeQliSJZga9aO6iUB4YUC7_qcm8vCVs0y1Tn9IdLjDtsP6cTNrMMpt9X.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1536x1024&from=bu&u=0rAYHVJgczhhNqYdIK0Dm8xxPLF6Fa6U0E5RPcapN0k&cs=1536x0" 
+         class="custom-bot-mascot" 
+         onclick="const df = document.querySelector('df-messenger'); if (df.hasAttribute('expand')) { df.removeAttribute('expand'); } else { df.setAttribute('expand', 'true'); }" 
+         alt="Чат">
+    
+    <div class="chat-window-wrapper" id="chatWrapper">
+        <button class="chat-close-btn" onclick="document.querySelector('df-messenger').removeAttribute('expand');" title="Закрыть чат">&times;</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkExist = setInterval(function() {
+                const df = document.querySelector('df-messenger');
+                if (df && df.shadowRoot && df.shadowRoot.querySelector('#widgetIcon')) {
+                    const style = document.createElement('style');
+                    style.innerHTML = '#widgetIcon { display: none !important; }';
+                    df.shadowRoot.appendChild(style);
+                    clearInterval(checkExist);
+                }
+            }, 100);
+        });
+    </script>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Read saved profile data
+            const savedName = localStorage.getItem('profileName');
+            const savedEmail = localStorage.getItem('profileEmail');
+            const savedPhone = localStorage.getItem('profilePhone');
+            
+            const nameInput = document.getElementById('profileName');
+            const emailInput = document.getElementById('profileEmail');
+            const phoneInput = document.getElementById('profilePhone');
+            const holderLabel = document.getElementById('cardHolderLabel');
+            
+            if (savedName) {
+                nameInput.value = savedName;
+                holderLabel.textContent = savedName.toUpperCase();
+            }
+            if (savedEmail) emailInput.value = savedEmail;
+            if (savedPhone) phoneInput.style.value = savedPhone;
+            
+            // Save profile details
+            document.getElementById('saveProfileBtn').addEventListener('click', () => {
+                const name = nameInput.value.trim();
+                const email = emailInput.value.trim();
+                const phone = phoneInput.value.trim();
+                
+                if (name === "") return;
+                
+                localStorage.setItem('profileName', name);
+                localStorage.setItem('profileEmail', email);
+                localStorage.setItem('profilePhone', phone);
+                
+                holderLabel.textContent = name.toUpperCase();
+                
+                // Show floating popup notification
+                alert('Профиль успешно обновлен!');
+            });
+            
+            // Render Purchase History
+            renderHistoryLists();
+        });
+        
+        function renderHistoryLists() {
+            const ticketList = document.getElementById('activeTicketsList');
+            const barList = document.getElementById('barOrdersList');
+            
+            // 1. Render Tickets
+            let userTickets = JSON.parse(localStorage.getItem('userTickets') || '[]');
+            
+            // Mock entry if history is empty
+            if (userTickets.length === 0) {
+                ticketList.innerHTML = `
+                    <div class="history-item">
+                        <div class="history-movie-details">
+                            <h5>Дюна: Часть Вторая</h5>
+                            <p>Сеанс: Сегодня, в 16:50 • Формат: IMAX</p>
+                            <p style="font-size: 0.75rem; margin-top: 4px;">Места: Ряд E-5, Ряд E-6 (VIP)</p>
+                        </div>
+                        <div class="history-ticket-code">
+                            <span>VG-395029</span><br>
+                            <small style="font-weight: 700; color: var(--neon-yellow);">970 ₽</small>
+                        </div>
+                    </div>
+                `;
+            } else {
+                ticketList.innerHTML = userTickets.map(t => `
+                    <div class="history-item">
+                        <div class="history-movie-details">
+                            <h5>${t.movieTitle}</h5>
+                            <p>Сеанс: ${t.date}, в ${t.time}</p>
+                            <p style="font-size: 0.75rem; margin-top: 4px;">Места: ${t.seats}</p>
+                        </div>
+                        <div class="history-ticket-code">
+                            <span>${t.code}</span><br>
+                            <small style="font-weight: 700; color: var(--neon-yellow);">${t.price} ₽</small>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            // 2. Render Bar Orders
+            let userOrders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            
+            // Mock entry if history is empty
+            if (userOrders.length === 0) {
+                barList.innerHTML = `
+                    <div class="history-item">
+                        <div class="history-movie-details">
+                            <h5>Попкорн Карамельный (L) × 1</h5>
+                            <p>Кока-Кола (M) × 1</p>
+                            <p style="font-size: 0.75rem; color: var(--neon-cyan); margin-top: 4px;">Статус: Готов к выдаче</p>
+                        </div>
+                        <div class="history-ticket-code">
+                            <span>VG-BAR-1904</span><br>
+                            <small style="font-weight: 700; color: var(--neon-yellow);">470 ₽</small>
+                        </div>
+                    </div>
+                `;
+            } else {
+                barList.innerHTML = userOrders.map(o => `
+                    <div class="history-item">
+                        <div class="history-movie-details">
+                            <h5>${o.summary}</h5>
+                            <p style="font-size: 0.75rem; color: var(--neon-cyan); margin-top: 4px;">Статус: Готов к выдаче</p>
+                        </div>
+                        <div class="history-ticket-code">
+                            <span>${o.code}</span><br>
+                            <small style="font-weight: 700; color: var(--neon-yellow);">${o.price} ₽</small>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            // Update points label based on spent history
+            let totalSpent = 0;
+            userTickets.forEach(t => totalSpent += t.price);
+            userOrders.forEach(o => totalSpent += o.price);
+            
+            // Standard points calculation: 10% of purchases + base 420 points
+            const balance = 420 + Math.floor(totalSpent * 0.1);
+            document.getElementById('cardPointsLabel').textContent = `${balance} б.`;
+        }
+    </script>
+</body>
+</html>
