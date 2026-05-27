@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кинобар 🍿 | Варик - Гончарик</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="brand-block">
+                <div class="logo" onclick="window.location.href='index.html'">🍿 Варик-Гончарик</div>
+                <div class="city-selector">
+                    <select id="citySelect">
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="msk">Москва</option>
+                        <option value="perm">Пермь</option>
+                        <option value="kazan">Казань</option>
+                        <option value="krd">Краснодар</option>
+                        <option value="sochi">Сочи</option>
+                        <option value="nn">Нижний Новгород</option>
+                        <option value="vlad">Владивосток</option>
+                    </select>
+                </div>
+            </div>
+            <nav class="main-navigation">
+                <div class="nav-group base-infrastructure">
+                    <a href="index.html" class="nav-link">Главная / Афиша</a>
+                    <a href="cinemas.html" class="nav-link">Кинотеатры</a>
+                    <a href="bonuses.html" class="nav-link">Акции и Бонусы</a>
+                </div>
+                <div class="nav-group unique-features">
+                    <a href="roulette.html" class="nav-link highlight-link">Кино-Рулетка 🎲</a>
+                    <a href="merch.html" class="nav-link">Магазин</a>
+                    <a href="kinobar.html" class="nav-link">Кинобар 🍿</a>
+                </div>
+            </nav>
+            <div class="user-profile-block">
+                <a href="account.html" class="profile-btn">Личный кабинет</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-wrapper" style="margin-top: 80px;">
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Кинобар 🍿</h2>
+                <p>Закажите попкорн и напитки онлайн, чтобы забрать на стойке без очереди!</p>
+            </div>
+            
+            <div class="kinobar-layout">
+                <!-- Product Category Tabs -->
+                <div class="filters-container" id="barFilters">
+                    <div class="tab-group">
+                        <button class="tab-btn active" data-category="all">Все меню</button>
+                        <button class="tab-btn" data-category="popcorn">Попкорн</button>
+                        <button class="tab-btn" data-category="drinks">Напитки</button>
+                        <button class="tab-btn" data-category="snacks">Закуски</button>
+                        <button class="tab-btn" data-category="combo">Комбо-наборы</button>
+                    </div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div class="kinobar-grid" id="barProductsGrid">
+                    <!-- Products will be generated dynamically by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Cart Toggle Button -->
+    <button class="cart-drawer-toggle" id="cartToggle">
+        🛒
+        <span class="cart-badge" id="cartBadgeCount" style="display: none;">0</span>
+    </button>
+
+    <!-- Sliding Cart Sidebar -->
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Мой заказ</h3>
+            <button class="close-cart-btn" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cartItemsList">
+            <div class="cart-empty-text">Ваша корзина пуста 🍿</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Итого к оплате:</span>
+                <span id="cartTotalPrice">0 ₽</span>
+            </div>
+            <button class="cart-checkout-btn" id="cartCheckoutBtn" disabled>Оформить заказ</button>
+        </div>
+    </aside>
+
+    <!-- Success Order Modal Container -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-card" style="max-width: 450px;">
+            <div class="modal-header">
+                <h3>Заказ оформлен!</h3>
+                <button class="modal-close-btn" onclick="document.getElementById('orderModal').classList.remove('active')">&times;</button>
+            </div>
+            <div class="modal-body" id="orderModalBody">
+                <!-- Generated barcode and details go here -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Сеть кинотеатров «Варик - Гончарик». Все права защищены.</p>
+    </footer>
+
+    <!-- Chat Bot Integration -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger 
+        intent="WELCOME" 
+        chat-title="ЧатБот" 
+        agent-id="ec699caf-f14a-4a44-8a08-49cab484a764" 
+        language-code="ru" 
+        chat-icon="https://sun9-62.userapi.com/s/v1/ig2/gZJ1_e2h3SiXRsHkasMsDhKUEQqkqydRQeQliSJZga9aO6iUB4YUC7_qcm8vCVs0y1Tn9IdLjDtsP6cTNrMMpt9X.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1536x1024&from=bu&u=0rAYHVJgczhhNqYdIK0Dm8xxPLF6Fa6U0E5RPcapN0k&cs=1536x0">
+    </df-messenger>
+    <img src="https://sun9-62.userapi.com/s/v1/ig2/gZJ1_e2h3SiXRsHkasMsDhKUEQqkqydRQeQliSJZga9aO6iUB4YUC7_qcm8vCVs0y1Tn9IdLjDtsP6cTNrMMpt9X.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1536x1024&from=bu&u=0rAYHVJgczhhNqYdIK0Dm8xxPLF6Fa6U0E5RPcapN0k&cs=1536x0" 
+         class="custom-bot-mascot" 
+         onclick="const df = document.querySelector('df-messenger'); if (df.hasAttribute('expand')) { df.removeAttribute('expand'); } else { df.setAttribute('expand', 'true'); }" 
+         alt="Чат">
+    
+    <div class="chat-window-wrapper" id="chatWrapper">
+        <button class="chat-close-btn" onclick="document.querySelector('df-messenger').removeAttribute('expand');" title="Закрыть чат">&times;</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkExist = setInterval(function() {
+                const df = document.querySelector('df-messenger');
+                if (df && df.shadowRoot && df.shadowRoot.querySelector('#widgetIcon')) {
+                    const style = document.createElement('style');
+                    style.innerHTML = '#widgetIcon { display: none !important; }';
+                    df.shadowRoot.appendChild(style);
+                    clearInterval(checkExist);
+                }
+            }, 100);
+        });
+    </script>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="kinobar.js"></script>
+</body>
+</html>
